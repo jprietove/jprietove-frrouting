@@ -9,7 +9,7 @@ LABEL Title="Quagga" \
 ENV HOME /root
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update && apt-get -y upgrade && apt-get install -y quagga
+RUN apt-get update && apt-get install -y quagga
 
 COPY config/* /etc/quagga/
 RUN chown quagga:quagga /etc/quagga/* && chmod 640 /etc/quagga/*
