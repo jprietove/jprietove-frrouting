@@ -1,6 +1,6 @@
 # Quagga
 # For use with GNS3 as a Quagga Router
-FROM ubuntu:bionic
+FROM debian:jessie
 MAINTAINER Javier Prieto <javier.prieto.edu@juntadeandalucia.es>
 
 LABEL Title="Quagga" \
@@ -15,7 +15,7 @@ COPY config/* /etc/quagga/
 RUN chown quagga:quagga /etc/quagga/* && chmod 640 /etc/quagga/*
 RUN echo "net.ipv6.conf.all.forwarding=1" >> /etc/sysctl.conf
 
-VOLUME [ "/etc/quagga" ]
+VOLUME [ "/etc/quagga/" ]
 
 ENTRYPOINT /etc/init.d/quagga start &&  sysctl -p && bash
 
