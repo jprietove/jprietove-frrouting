@@ -1,6 +1,6 @@
 # Quagga
 # For use with GNS3 as a Quagga Router
-FROM debian:latest
+FROM ubuntu:bionic
 MAINTAINER Javier Prieto <javier.prieto.edu@juntadeandalucia.es>
 
 LABEL Title="Quagga" \
